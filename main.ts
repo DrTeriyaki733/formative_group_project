@@ -1,9 +1,12 @@
 function scoreCalc(score: number, difficulty: number) {
     finalscore = score * difficulty
-    return
+    return finalscore;
 }
 info.onCountdownEnd(function () {
+    score = info.player1.score()
     scoreCalc(score, selectedDifficulty)
+    game.splash("Good Job!");
+    game.splash("Your score was:" + " " + finalscore)
 })
 function splashScreen() {
     scene.setBackgroundImage(img`
@@ -167,4 +170,3 @@ if (userDifficulty == "easy" || userDifficulty == "Easy") {
 
 // Code to run at game end
 console.log(selectedDifficulty)
-score = info.player1.score()
