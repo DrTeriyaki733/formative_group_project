@@ -129,7 +129,6 @@ function splashScreen() {
         999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
         `)
     game.splash("Welcome to HIT THE TARGET", "(Press A to start)")
-    let userDifficulty: string;
     userDifficulty = game.askForString("What difficulty? (easy, medium, hard)", 6)
 }
 function easyDifficultyGameplay() {
