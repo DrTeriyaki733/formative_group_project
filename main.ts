@@ -6,7 +6,7 @@ info.onCountdownEnd(function () {
     score = info.player1.score()
     scoreCalc(score, selectedDifficulty)
     game.splash("Good Job!");
-    game.splash("Your score was:" + " " + finalscore)
+    game.splash("Your score was:" + " " + scoreCalc)
 })
 function splashScreen() {
     scene.setBackgroundImage(img`
@@ -201,6 +201,14 @@ function mediumDifficultyGameplay() {
             target.setPosition(160, randint(0, 160))
         }
         target.setVelocity(randint(-50, 50), randint(-50, 50))
+        if (target.x > 160 || target.x < 0) {
+            target.destroy();
+            console.log("Target X-Value destroyed")
+        }
+        if (target.y > 120 || target.y < 0) {
+            target.destroy();
+            console.log("Target Y-Value destroyed")
+        }
     })
     console.log("550")
 }
@@ -232,6 +240,14 @@ function hardDifficultyGameplay() {
             target.setPosition(160, randint(0, 160))
         }
         target.setVelocity(randint(-50, 50), randint(-50, 50))
+        if (target.x > 160 || target.x < 0) {
+            target.destroy();
+            console.log("Target X-Value destroyed")
+        }
+        if (target.y > 120 || target.y < 0) {
+            target.destroy();
+            console.log("Target Y-Value destroyed")
+        }
     })
     console.log("400")
 }
